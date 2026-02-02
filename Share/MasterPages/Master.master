@@ -1,0 +1,81 @@
+<%@ Master Language="C#" AutoEventWireup="true" Inherits="Order.Sample.Share.MasterPages.Master" Codebehind="Master.master.cs" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head id="head" runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= Page.Title %></title>
+    <link rel="shortcut icon" type="image/x-icon" href="~/images/favicon.ico" />
+    
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="~/Styles/Site.css" runat="server" />
+    
+    <!-- ExtJS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/resources/css/ext-all.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/adapter/ext/ext-base.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/3.4.1-1/ext-all.min.js"></script>
+    
+    <script type="text/javascript">
+        // Initialize app namespace
+        window.app = window.app || {};
+        app.page = app.page || {};
+        app.util = app.util || {};
+        app.order = app.order || {};
+        app.form = app.form || {};
+        app.grid = app.grid || {};
+        app.html = app.html || {};
+        app.dialogs = app.dialogs || {};
+        app.analytics = app.analytics || {};
+        
+        // Ready function
+        app.onReady = function(fn) {
+            Ext.onReady(fn);
+        };
+    </script>
+    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body class="MenuBody">
+    <form id="form1" runat="server">
+        <!-- Header -->
+        <div id="header2" class="main-header">
+            <div class="h2bar">
+                <div id="hd2" class="grid-container">
+                    <div class="grid-20 header-logo">
+                        <a href="~/Default.aspx" runat="server" class="logo-link">
+                            <span class="logo-text">Home</span>
+                        </a>
+                    </div>
+                    <div class="grid-40 centered">
+                        <h1 class="header-title">Order List Sample</h1>
+                    </div>
+                    <div class="grid-right header-user">
+                        <span>Sample User</span>
+                    </div>
+                </div>
+            </div>
+            <div class="h2menu">
+                <div class="grid-container">
+                    <div class="grid-100">
+                        <ul class="nav-menu">
+                            <li><a href="~/Default.aspx" runat="server">Home</a></li>
+                            <li><a href="~/Order/List/OrderList.aspx" runat="server">Order List</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div id="bd" class="main-content">
+            <asp:ContentPlaceHolder ID="PageBody" runat="server" />
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Sample - Order List Demo Application</p>
+        </div>
+    </form>
+</body>
+</html>

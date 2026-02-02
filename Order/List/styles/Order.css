@@ -1,0 +1,420 @@
+/*
+ * Order.css - Order List styles
+ * Sample application with randomized mock data
+ */
+
+/* Container */
+.order-container {
+    padding: 10px;
+}
+
+/* Filter toolbar */
+.filterToolbar {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+}
+
+.filterToolbar .filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.filterToolbar .filter-row:last-child {
+    margin-bottom: 0;
+}
+
+.filterToolbar .filter-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.filterToolbar label {
+    font-weight: bold;
+    font-size: 11px;
+    color: #333;
+    white-space: nowrap;
+}
+
+.filterToolbar select,
+.filterToolbar input[type="text"] {
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 11px;
+}
+
+.filterToolbar select {
+    min-width: 120px;
+}
+
+.filterToolbar input[type="text"] {
+    width: 80px;
+}
+
+.filterToolbar .range-separator {
+    color: #666;
+    padding: 0 3px;
+}
+
+.filterToolbar .search-btn {
+    background: #0066cc;
+    color: white;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filterToolbar .search-btn:hover {
+    background: #0052a3;
+}
+
+/* Filter description */
+.filter-description {
+    background: #e8f4fc;
+    border: 1px solid #b8d4e8;
+    border-radius: 3px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    color: #336;
+}
+
+/* Order list container */
+.orderlist-container {
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+/* Ordered list styles */
+.orderlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: item-counter;
+}
+
+.orderlist-item {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.15s ease;
+    cursor: pointer;
+}
+
+.orderlist-item:last-child {
+    border-bottom: none;
+}
+
+.orderlist-item:nth-child(even) {
+    background: #fafafa;
+}
+
+.orderlist-item:hover,
+.orderlist-item.item-hover {
+    background: #f0f7ff;
+}
+
+.orderlist-item:nth-child(even):hover,
+.orderlist-item:nth-child(even).item-hover {
+    background: #e8f2fc;
+}
+
+/* Rank number */
+.item-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    background: #2a5f8f;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Main content area */
+.item-main {
+    flex: 1;
+    padding: 12px 15px;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.item-header .order-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.item-header .order-link:hover {
+    text-decoration: underline;
+}
+
+.item-status {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+/* Status styling */
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.status-processing {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.status-shipped {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+.status-delivered {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-cancelled {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Score styling */
+.score-high {
+    background: #d4edda;
+    color: #155724;
+}
+
+.score-medium {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.score-low {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Item details */
+.item-details {
+    font-size: 12px;
+}
+
+.detail-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px 20px;
+    margin-bottom: 4px;
+}
+
+.detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    color: #666;
+    font-weight: 500;
+}
+
+.detail-value {
+    color: #333;
+    margin-right: 10px;
+}
+
+.detail-row.stats {
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px dashed #ddd;
+    color: #666;
+    font-size: 11px;
+}
+
+.detail-row.stats span {
+    margin-right: 15px;
+}
+
+.order-total {
+    font-weight: bold;
+    color: #155724;
+}
+
+/* Empty state */
+.orderlist-empty {
+    padding: 40px;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Summary */
+.orderlist-summary {
+    background: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #666;
+}
+
+/* Buy list panel - now Pending Orders */
+.pending-orders-panel {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: white;
+    margin-top: 15px;
+}
+
+.pending-orders-header {
+    background: #2a5f8f;
+    color: white;
+    padding: 10px 12px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.pending-orders-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pending-order-item {
+    padding: 10px 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pending-order-item:last-child {
+    border-bottom: none;
+}
+
+.pending-order-item .priority {
+    background: #0066cc;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.pending-order-item .order-info {
+    flex: 1;
+    font-weight: bold;
+    color: #333;
+    font-size: 12px;
+}
+
+.pending-order-item .customer {
+    font-size: 11px;
+    color: #666;
+}
+
+.pending-order-item .total {
+    font-size: 11px;
+    color: #155724;
+    font-weight: bold;
+}
+
+.pending-orders-summary {
+    background: #f5f5f5;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #666;
+    text-align: center;
+}
+
+/* Queue status */
+.queue-status {
+    padding: 8px 12px;
+    background: #fff8dc;
+    border: 1px solid #f0e68c;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    font-size: 11px;
+}
+
+/* Grid dialog styles */
+.Product.SubTable {
+    width: 100%;
+}
+
+.Product.SubTable td {
+    padding: 2px 4px;
+}
+
+.Product.SubTable .ProductTitle {
+    font-weight: bold;
+    color: #333;
+}
+
+.Product.SubTable .ProductTitle a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.Product.SubTable .ProductTitle a:hover {
+    text-decoration: underline;
+}
+
+.Product.SubTable .Label {
+    color: #666;
+    font-size: 10px;
+    text-align: right;
+    width: 60px;
+}
+
+.EmptyProductTitle {
+    color: #999;
+    font-style: italic;
+}
+
+/* Toolbar styles */
+.boldToolbar .x-toolbar {
+    font-weight: bold;
+}
+
+.icon-excel {
+    background: url(../../../images/icons/excel-16.png) no-repeat center center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .filterToolbar .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .orderlist-item {
+        flex-wrap: wrap;
+    }
+    
+    .item-main {
+        flex: 0 0 100%;
+    }
+}
